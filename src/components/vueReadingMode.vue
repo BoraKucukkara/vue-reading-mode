@@ -52,15 +52,19 @@
                 <svg v-if="!fullscreen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M7 2H2v5l1.8-1.8L6.5 8L8 6.5L5.2 3.8L7 2zm6 0l1.8 1.8L12 6.5L13.5 8l2.7-2.7L18 7V2h-5zm.5 10L12 13.5l2.7 2.7L13 18h5v-5l-1.8 1.8l-2.7-2.8zm-7 0l-2.7 2.7L2 13v5h5l-1.8-1.8L8 13.5L6.5 12z"/></svg>
                 <svg v-if="fullscreen" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="currentColor" d="M3.4 2L2 3.4l2.8 2.8L3 8h5V3L6.2 4.8L3.4 2zm11.8 4.2L18 3.4L16.6 2l-2.8 2.8L12 3v5h5l-1.8-1.8zM4.8 13.8L2 16.6L3.4 18l2.8-2.8L8 17v-5H3l1.8 1.8zM17 12h-5v5l1.8-1.8l2.8 2.8l1.4-1.4l-2.8-2.8L17 12z"/></svg>
             </div>-->
-            <div @click="readingModeToggle()"
-            :class="{'reader-mode--toggle': !readingmode}">
+            <div @click="readingModeToggle()">
                 <svg v-if="readingmode" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M15 3.001a1 1 0 1 1 0 2H6v13a1 1 0 0 0 1 1h8a1 1 0 1 1 0 2H7a3 3 0 0 1-3-3v-14a1 1 0 0 1 1-1h10Zm1.707 5.293A1 1 0 0 0 15 9v2H9a1 1 0 1 0 0 2h6v2a1 1 0 0 0 1.707.707l3-3a1 1 0 0 0 0-1.414l-3-3Z" clip-rule="evenodd"/></svg>
-                <svg v-if="!readingmode" style="color:tomato" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 14a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm3.465-4a4.002 4.002 0 0 0-7.339 1H2a1 1 0 1 0 0 2h1.126A4.002 4.002 0 0 0 11 12h2a4 4 0 0 0 7.874 1H22a1 1 0 1 0 0-2h-1.126a4.002 4.002 0 0 0-7.339-1h-3.07ZM15 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0Z" clip-rule="evenodd"/></svg>
-                <p v-if="!readingmode">View in Reading Mode</p>
             </div>
         </nav>
         <article>
-            <slot/>
+            <div @click="readingModeToggle()"
+            :class="{'reader-mode--toggle': !readingmode}">
+                <svg v-if="!readingmode" style="color:tomato" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M7 14a2 2 0 1 0 0-4a2 2 0 0 0 0 4Zm3.465-4a4.002 4.002 0 0 0-7.339 1H2a1 1 0 1 0 0 2h1.126A4.002 4.002 0 0 0 11 12h2a4 4 0 0 0 7.874 1H22a1 1 0 1 0 0-2h-1.126a4.002 4.002 0 0 0-7.339-1h-3.07ZM15 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0Z" clip-rule="evenodd"/></svg>
+                <p v-if="!readingmode">View in Reading Mode</p>
+            </div>
+            <!-- Main Content -->
+                <slot/> 
+            <!-- Main Content -->
         </article>
         <nav class="reader-mode--nav">
             <div @click="readingModeToggle()"
@@ -77,7 +81,7 @@
             return {
                 readingmode: false,
                 fontFamily:"serif",
-                theme: "light",
+                theme: "dark",
                 fontsize: 1,
                 widthMultiplier: 1,
                 lineHeight: 1.4,
@@ -138,7 +142,7 @@
     min-width: 300px;
     
     font-size: calc(var(--vrm-font-size) * var(--vrm-font-multiplier)) !important;
-    font-family: var(--vrm-font-family);
+    font-family: var(--vrm-font-family) !important;
     font-size-adjust: .5;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -152,7 +156,7 @@
     margin:0 !important;
     padding:3rem 2rem !important;
 
-    z-index: 999999999;
+    z-index: 999999999 !important;
     overflow-y: auto;
     
     display: flex !important;
@@ -164,6 +168,7 @@
     max-width: calc(599px * var(--vrm-width-multiplier) )!important;
     height: auto;
     position: static !important;
+    border-bottom:1px dashed #999 !important;
 }
 @media screen and (width < 600px) {
     .reader-mode {
@@ -195,21 +200,20 @@
 .reader-mode--light a, .reader-mode--light a:hover {
   font-weight: 500;
   color: #1673d7 !important;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 /* Fullscreen Mode */
 .reader-mode--fullscreen {
     position: fixed !important;
-    inset: 0;
-    z-index: 999999999;
-    overflow-y: scroll;
+    inset: 0 !important;
+    z-index: 999999999 !important;
+    overflow-y: scroll !important;
 }
 
 /* Reading Mode Toggle */
 .reader-mode--toggle {
-    position: absolute !important;
-    margin-top:-2rem ;
+    margin-top: 2rem;
     padding: .1rem .5rem;
     display: inline-flex;
     align-items: center;
@@ -234,19 +238,22 @@
 
 /* Element options */
 .reader-mode p {
-    text-indent: 1.7rem;
+    text-indent: 1.7rem !important;
 }
 .reader-mode * :not(h1, h2, h3, h4, h5, h6) {
     font-size: calc(1.3rem * var(--vrm-font-multiplier)) !important
 }
 .reader-mode h1 {
-    font-size: calc(2.1rem * var(--vrm-font-multiplier)) !important
+    font-size: calc(2.1rem * var(--vrm-font-multiplier)) !important;
+    margin:2rem 0 1rem 0 !important;
 }
 .reader-mode h2 {
-    font-size: calc(1.6rem * var(--vrm-font-multiplier)) !important
+    font-size: calc(1.6rem * var(--vrm-font-multiplier)) !important;
+    margin:2rem 0 .5rem 0 !important;
 }
 .reader-mode h3, .reader-mode h4,.reader-mode h5,.reader-mode h6 {
-    font-size: calc(1.4rem * var(--vrm-font-multiplier)) !important
+    font-size: calc(1.4rem * var(--vrm-font-multiplier)) !important;
+    margin:1rem 0 .5rem 0 !important;
 }
 .reader-mode img, picture, video, audio, source, canvas,
              form, input, textarea, select, button, search,
@@ -259,11 +266,9 @@
     overflow:auto !important;
 }
 
-
 /* Navigation */
 .reader-mode .reader-mode--nav {
     position: relative !important;
-    top:0;
     display: flex;
     flex-direction: row;
     gap: .5rem;
@@ -306,4 +311,20 @@
     margin: 0;
     background: #77777740 !important;
 }
+
+/* Other adjustments */
+.reader-mode ol, ul {
+    padding-left:2rem !important;
+    margin: 1rem 0 !important
+}
+.reader-mode ul {list-style:disc !important;}
+.reader-mode ol {list-style:decimal !important;}
+.reader-mode blockquote{
+    border-left:.15rem solid #66666650 !important;
+    margin: .5rem 0 !important;
+    padding:0 1rem !important;
+    font-style: italic !important;
+    position: relative;
+}
+.reader-mode q {font-style: italic !important;}
 </style>

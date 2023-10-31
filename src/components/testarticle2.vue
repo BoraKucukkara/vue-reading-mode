@@ -11,11 +11,12 @@
 <h2>1. The Significance of Reading Comfort</h2>
 <p>
   Reading comfort refers to the ease with which individuals can engage with written content. It encompasses various factors that influence the reading experience, such as font choices, text size, line spacing, and the reading environment.
+  <blockquote>Never gonna give you up. Never gonna let you down. Never gonna run around and desert you...</blockquote>
 </p>
 
 <h3>1.1 Font and Text Size</h3>
 <p>
-  The choice of font and text size plays a pivotal role in reading comfort. Sans-serif fonts like Arial and Helvetica are generally more accessible, especially for individuals with visual impairments. Larger text sizes can enhance readability, reducing eye strain and promoting a more pleasant reading experience.
+  <q>The choice of font and text size plays a pivotal role in reading comfort. </q> Sans-serif fonts like Arial and Helvetica are generally more accessible, especially for individuals with visual impairments. Larger text sizes can enhance readability, reducing eye strain and promoting a more pleasant reading experience.
 </p>
 
 <h3>1.2 Line Spacing and Margins</h3>
@@ -36,6 +37,12 @@
 <h3>2.1 Screen Readers and Alt Text</h3>
 <p>
   Screen readers are essential tools for individuals with visual impairments. Including descriptive alt text for images and providing well-structured content enables screen readers to convey information effectively.
+  <ol>
+    <li>Lorem ipsum dolor.</li>
+    <li>Sit amet consectetur.</li>
+    <li>Adipisicing elit.</li>
+  </ol>
+
 </p>
 
 <h3>2.2 Read-Aloud Software</h3>
