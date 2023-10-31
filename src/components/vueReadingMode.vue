@@ -167,6 +167,7 @@
 .reader-mode article {
     max-width: calc(599px * var(--vrm-width-multiplier) )!important;
     height: auto;
+    margin:0 0 1rem 0 !important;
     position: static !important;
     border-bottom:1px dashed #999 !important;
 }
