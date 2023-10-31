@@ -1,0 +1,42 @@
+{
+  "name": "vue-reading-mode",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Bora Kucukkara",
+    "email": "borakucukkara.com@gmail.com",
+    "url": "https://www.borakucukkara.com"
+  },
+  "homepage": "https://vue-reading-mode.netlify.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BoraKucukkara/vue-reading-mode"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "reading",
+    "reading-mode",
+    "reader",
+    "es6",
+    "read mode",
+    "blog",
+    "article",
+    "vue3",
+    "read-mode"
+  ]
+}
