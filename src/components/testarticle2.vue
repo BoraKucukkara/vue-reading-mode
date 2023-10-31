@@ -1,6 +1,6 @@
 <template>
     <h1>Enhancing Reading Comfort and Accessibility for Everyone</h1>
-    <img src="src/assets/reading-device.jpg" alt="" style="max-width: 100%;">
+    <img src="../assets/reading-device.jpg" alt="" style="max-width: 100%;">
 
 <h2>Introduction</h2>
 <p>

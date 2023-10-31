@@ -1,6 +1,6 @@
 <template>
   <h1>The Art of Human Reading Habits: Navigating the Pages of Our Minds</h1>
-  <img src="src/assets/human-reading.jpg" alt="" style="max-width: 100%;">
+  <img src="../assets/human-reading.jpg" alt="" style="max-width: 100%;">
 
 <h2>Introduction</h2>
 <p>
