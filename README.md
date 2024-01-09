@@ -1,3 +1,5 @@
+[![MadeWithVueJs.com shield](https://madewithvuejs.com/storage/repo-shields/4767-shield.svg)](https://madewithvuejs.com/p/vue-reading-mode/shield-link)
+
 # Vue Reading Mode
 Vue Reading Mode provides an alternative reading experience for articles and blogs.
 
